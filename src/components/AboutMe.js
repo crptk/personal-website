@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useRef, useState } from "react";
 import photo from '../assets/Photo.png';
+import resume from '../assets/Edrees_Amiri_resume.pdf';
 
 const AboutMe = () => {
   const ref = useRef(null);
@@ -74,7 +75,7 @@ const AboutMe = () => {
       </div>
 
       <div className={`links ${isVisible ? "active" : ""}`}>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <a href={resume} target="_blank" rel="noopener noreferrer">
           <button id="resumeButton">Resume</button>
         </a>
         <a href="https://www.linkedin.com/in/edrees-amiri/" target="_blank" rel="noopener noreferrer">
