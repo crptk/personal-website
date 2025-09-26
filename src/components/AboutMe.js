@@ -66,10 +66,10 @@ const AboutMe = () => {
 
         <div className={`introText ${isVisible ? "active" : ""}`}>
           <ul>
-            <li>A programmer, video editor, and deep thinker with a passion for innovation and meaningful impact.</li>
-            <li>Computer Science student at Ontario Tech University, actively exploring AI, Full-Stack Development, and Cloud Computing.</li>
-            <li>Passionate about building projects that create a positive change in the world.</li>
-            <li>Driven by the vision of developing technological solutions that elevate society rather than hinder it.</li>
+            <li>I'm a 3rd year Computer Science student working to become  a full-stack AI engineer.</li>
+            <li>I love working with others on projects, hackathons are something I'm extremely passionate about, and I always try to bring that same energy to any dev team I work with.</li>
+            <li>Creating films and music videos is one of my favourite hobbies, I've been doing it for 6 years, and I'm currently working on creating tools that make video editing more accessible.</li>
+            <li>I'm very project-oriented, I love working on things and slowly see it build into something amazing. It's one of the things that brought me to this field!</li>
           </ul>
         </div>
       </div>
