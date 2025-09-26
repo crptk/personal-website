@@ -87,7 +87,7 @@ const Work = () => {
           <button className={`mediaTeamButton ${activeJob === 'msa' ? 'active' : ''}`} onClick={() => toggleJob('msa')}>
             <img src={MSALogo} alt="MSA Logo" />
             <div className="work-button-content">
-              <h4>Media Team Member</h4>
+              <h4>Videographer</h4>
               <p>Ontario Tech Muslim Student's Association</p>
             </div>
           </button>
