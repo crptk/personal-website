@@ -4,7 +4,7 @@ import CSClubLogo from "../assets/CSClubLogo.png";
 import MSALogo from "../assets/MSALogo.png";
 import AirprimeLogo from "../assets/AirprimeLogo.png"
 const Work = () => {
-  const [activeJob, setActiveJob] = useState('msa');
+  const [activeJob, setActiveJob] = useState('resyncbot');
 
   const toggleJob = (jobId) => {
     setActiveJob(jobId);
