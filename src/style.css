@@ -471,19 +471,58 @@ nav {
 .work-buttons button {
     border-radius: 12px;   
     background: linear-gradient(90deg, #006885 0%, #001319 68%);
-    padding: 5px;
     border: 1px solid #1f2a38; 
     color: #fff;
     text-align: left;
     padding: 15px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.work-buttons button img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+.work-buttons button svg {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.work-button-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.work-buttons button h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.work-buttons button p {
+    font-size: 11px;
+    color: #ccc;
+    margin: 0;
+    opacity: 0.9;
 }
 
 .work-buttons button.active {
-  background: linear-gradient(90deg, #006885 0%, #001319 68%);
-  border: 1px solid #00C8FF;
-  box-shadow: 0px 0px 12px rgba(0, 200, 255, 0.3);
+    background: linear-gradient(90deg, #006885 0%, #001319 68%);
+    border: 1px solid #00C8FF;
+    box-shadow: 0px 0px 12px rgba(0, 200, 255, 0.3);
+}
+
+.work-buttons button.active h4 {
+    color: #00C8FF;
 }
 
 .experience {
@@ -498,59 +537,62 @@ nav {
 }
 
 .experience-line {
-  position: absolute;
-  top: -20%;
-  left: 30%;
-  width: 1000px;
-  height: auto;
-  z-index: -1;
-  pointer-events: none;
+    position: absolute;
+    top: -20%;
+    left: 27%;
+    width: 1000px;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .experience-line path {
-  fill: none !important;
-  stroke-dasharray: 2500;
-  stroke-dashoffset: 3350;
+    fill: none !important;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 3350;
 }
 
 .experience-line.active path {
-  animation: drawExperienceLine 3s ease forwards;
+    animation: drawExperienceLine 3s ease forwards;
 }
 
 @keyframes drawExperienceLine {
-  to {
-    stroke-dashoffset: 0;
-  }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .work-details {
-  flex: 1;
-  background: #0a0f14;
-  border-radius: 16px;
-  padding: 25px;
-  color: #ccc;
-  max-width: 600px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    flex: 1;
+    background: #0a0f14;
+    border-radius: 16px;
+    padding: 25px;
+    color: #ccc;
+    max-width: 600px;
+    min-height: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
 }
 
 .work-details h4 {
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 6px;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 6px;
 }
 
 .work-details span {
-  color: #00C8FF;
+    color: #00C8FF;
 }
 
 .work-details ul {
-  margin-top: 12px;
-  padding-left: 20px;
+    margin-top: 12px;
+    padding-left: 20px;
 }
 
 .work-details li {
-  margin-bottom: 10px;
-  line-height: 1.6;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .experience-title {
@@ -571,34 +613,30 @@ nav {
     color: #00C8FF;
 }
 
-.work-buttons h4 {
-    font-size: 12px;
-}
-
 .work-details,
 .work-content,
 .experience-title {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .experience-title.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
 }
 
 .work-details.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
 }
 
 .work-content.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
 }
 
 /* ----------------------
@@ -1052,47 +1090,178 @@ nav {
   transform: translateY(0);
   transition-delay: 0.2s;
 }
+/* Enhanced Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
-  background: #0d1117;
+  background: linear-gradient(145deg, #0a0f14 0%, #0d1219 100%);
   color: white;
-  max-width: 800px;
-  max-height: 90vh;
+  max-width: 900px;
+  max-height: 85vh;
+  width: 100%;
   overflow-y: auto;
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 0;
+  border-radius: 20px;
   position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(0, 200, 255, 0.2);
   text-align: left;
+  animation: slideUp 0.4s ease;
 }
 
-.modal-content img {
-  max-width: 100%;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.modal-content h2 {
+  font-size: 32px;
+  color: #00C8FF;
+  margin: 0;
+  padding: 30px 40px 10px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+/* Close Button */
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: white;
+  top: 20px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  color: #ccc;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.modal-close:hover {
+  background: rgba(255, 69, 69, 0.2);
+  border-color: rgba(255, 69, 69, 0.4);
+  color: #ff4545;
+  transform: scale(1.1);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 0 40px 40px;
+}
+
+/* Featured Image */
+.modal-content img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* YouTube Embed */
+.youtube-embed {
+  position: relative;
+  width: 100%;
+  height: 315px;
+  margin: 15px 0 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Section Headers */
+.modal-content h3 {
+  font-size: 22px;
+  color: #fff;
+  margin: 25px 0 15px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+}
+
+.modal-content h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, #00C8FF, #006885);
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.modal-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* Scrollbar Styling */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #00C8FF;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #00A8D8;
 }
 
 /* ----------------------
@@ -1391,4 +1560,483 @@ textarea {
 
 .delay-2 {
   animation-delay: 1.6s;
+}
+/* Mobile Responsive Fixes - Add these media queries at the end of your CSS */
+
+/* Mobile Navigation - Hamburger Menu */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    transition: right 0.3s ease;
+    border-left: 1px solid #00C8FF33;
+  }
+  
+  .navbar.active {
+    right: 0;
+  }
+  
+  .navbar a {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    background: rgba(0, 200, 255, 0.1);
+  }
+  
+  /* Hamburger Button */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  /* Overlay */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Landing Section Mobile */
+@media (max-width: 768px) {
+  .landing {
+    padding: 120px 20px 80px;
+    min-height: 80vh;
+  }
+  
+  .landing h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  
+  .landing h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .topLeftLines {
+    width: 300px;
+    left: -20px;
+  }
+  
+  .glow-circle-landing {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Introduction Section Mobile */
+@media (max-width: 768px) {
+  .introduction {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .introduction h2 {
+    font-size: 28px;
+  }
+  
+  .introContentWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .introContentWrapper ul {
+    padding-left: 20px;
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .myPhoto {
+    width: 150px;
+  }
+  
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .links button {
+    width: 200px;
+  }
+  
+  .aboutMeLine {
+    display: none; /* Hide decorative line on mobile */
+  }
+}
+
+/* Education Section Mobile */
+@media (max-width: 768px) {
+  .education {
+    padding: 60px 20px;
+  }
+  
+  .educationTitle h2 {
+    font-size: 28px;
+  }
+  
+  .educationContentWrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .educationItem {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .eduLogo {
+    width: 80px;
+  }
+  
+  .eduInfoBox {
+    min-width: auto;
+    max-width: 100%;
+  }
+  
+  .educationLine {
+    display: none; /* Hide decorative line on mobile */
+  }
+}
+
+/* Work Experience Section Mobile */
+@media (max-width: 768px) {
+  .experience {
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    padding: 0 20px;
+  }
+  
+  .experience-title h3 {
+    font-size: 28px;
+  }
+  
+  .work-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .work-buttons {
+    order: 2; /* Move buttons below content */
+  }
+  
+  .work-details {
+    order: 1;
+    max-width: 100%;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .work-buttons button {
+    padding: 12px 15px;
+  }
+  
+  .work-buttons button img,
+  .work-buttons button svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .work-buttons button h4 {
+    font-size: 12px;
+  }
+  
+  .work-buttons button p {
+    font-size: 10px;
+  }
+  
+  .experience-line {
+    display: none; /* Hide decorative line on mobile */
+  }
+}
+
+/* Skills Section Mobile */
+@media (max-width: 768px) {
+  .skills {
+    padding: 60px 20px;
+  }
+  
+  .skills-title {
+    font-size: 28px;
+  }
+  
+  .skills-category h3 {
+    font-size: 18px;
+  }
+  
+  .skills-grid {
+    gap: 20px;
+  }
+  
+  .skill-card {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .skill-card p {
+    font-size: 11px;
+  }
+}
+
+/* Projects Section Mobile */
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 20px;
+  }
+  
+  .projects-title h3 {
+    font-size: 28px;
+  }
+  
+  .projects-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Certifications Mobile */
+@media (max-width: 768px) {
+  .certifications {
+    padding: 60px 20px;
+  }
+  
+  .certs-title h2 {
+    font-size: 28px;
+  }
+  
+  .certs-carousel {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .cert-card {
+    min-width: 280px;
+    max-width: 300px;
+  }
+}
+
+/* Contact Section Mobile */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 20px 150px;
+  }
+  
+  .contact-title {
+    font-size: 28px;
+  }
+  
+  .contact-card {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  .send-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+  
+  .contact svg {
+    display: none; /* Hide decorative arrows on mobile */
+  }
+  
+  .glow-circle-contact {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* General Mobile Improvements */
+@media (max-width: 768px) {
+  /* Hide all decorative background elements on mobile */
+  .experience-line,
+  .aboutMeLine,
+  .educationLine {
+    display: none !important;
+  }
+  
+  /* Ensure text is readable */
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Improve spacing */
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  /* Make sure content doesn't get cut off */
+  .window {
+    overflow-x: hidden;
+  }
+}
+
+/* Very small screens (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .landing h1 {
+    font-size: 24px;
+  }
+  
+  .landing h2 {
+    font-size: 14px;
+  }
+  
+  .introduction h2,
+  .educationTitle h2,
+  .experience-title h3,
+  .skills-title,
+  .projects-title h3,
+  .contact-title {
+    font-size: 24px;
+  }
+  
+  .contact-card,
+  .project-card,
+  .cert-card {
+    margin: 0 5px;
+  }
+  
+  .skill-card {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .skill-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Mobile Modal Responsiveness */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-height: 90vh;
+    border-radius: 15px;
+  }
+  
+  .modal-content h2 {
+    font-size: 26px;
+    padding: 25px 20px 10px;
+  }
+  
+  .modal-body {
+    padding: 0 20px 25px;
+  }
+  
+  .modal-content img {
+    height: 200px;
+    margin: 15px 0 20px;
+  }
+  
+  .modal-content h3 {
+    font-size: 20px;
+    margin: 20px 0 12px;
+  }
+  
+  .modal-content p {
+    font-size: 15px;
+    text-align: left;
+  }
+  
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
 }

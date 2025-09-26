@@ -4,7 +4,7 @@ import NutriDetectThumb from '../assets/NutriDetect.png';
 import ResyncBotThumb from '../assets/ResyncBotThumb.png';
 import HandwrittenThumb from '../assets/handwritten-thumbnail.jpg';
 import GithubLogo from '../assets/GithubLogo.svg';
-
+import ImageFilteringThumb from '../assets/image-filtering.png'
 const Projects = () => {
   const [ticTacHovered, setTicTacHovered] = useState(false);
   const ref = useRef(null);
@@ -116,7 +116,7 @@ const Projects = () => {
               <span>#azure</span>
             </div>
             <a
-              href="https://github.com/yourusername/nutridetect"
+              href="https://github.com/TahoorSheikh/NutriDetector"
               target="_blank"
               rel="noopener noreferrer"
               className="github-btn"
@@ -161,7 +161,7 @@ const Projects = () => {
               <span>#algorithms</span>
             </div>
             <a
-              href="https://github.com/TahoorSheikh/NutriDetector"
+              href="https://github.com/crptk/Tic-Tac-Nope"
               target="_blank"
               rel="noopener noreferrer"
               className="github-btn"
@@ -200,7 +200,7 @@ const Projects = () => {
               <span>#scikit-learn</span>
               <span>#neural-networks</span>
             </div>
-            <a href="https://github.com/yourusername/handwritten-recognizer" target="_blank" rel="noopener noreferrer" className="github-btn">
+            <a href="https://github.com/crptk/handwritten-letter-recognizer.git" target="_blank" rel="noopener noreferrer" className="github-btn">
               <img src={GithubLogo} alt="GitHub" />
             </a>
           </div>
@@ -211,7 +211,7 @@ const Projects = () => {
         className="project-card"
         onClick={() => setSelectedProject("Image Filtering Program")}>
           <div className="preview">
-            <div className="placeholder">🖼️</div>
+            <img src={ImageFilteringThumb}></img>
           </div>
 
           <div className="card-header">
@@ -234,7 +234,7 @@ const Projects = () => {
               <span>#sobel</span>
               <span>#bmp</span>
             </div>
-            <a href="https://github.com/yourusername/image-filter" target="_blank" rel="noopener noreferrer" className="github-btn">
+            <a href="https://github.com/crptk/Image-Filtering-Program" target="_blank" rel="noopener noreferrer" className="github-btn">
               <img src={GithubLogo} alt="GitHub" />
             </a>
           </div>
@@ -249,80 +249,128 @@ const Projects = () => {
             {selectedProject === "ResyncBot" && (
               <>
                 <h2>ResyncBot</h2>
-                <img src={ResyncBotThumb} alt="ResyncBot preview" />
-                <h3>What is ResyncBot?</h3>
-                <p>
-                  ResyncBot is a verified Discord bot that streamlines video editing by automating 
-                  audio replacement with precision synchronization. Trusted by over 80,000 users 
-                  across 130+ communities, it reduces manual editing time from 30+ minutes to 
-                  under 30 seconds. Built for scalability and reliability with Python, Flask, 
-                  PostgreSQL, and Azure, with a React + Vite web demo for creators.
-                </p>
+                <div className="modal-body">
+                  <img src={ResyncBotThumb} alt="ResyncBot preview" />
+                  
+                  {/* YouTube Demo */}
+                  <div className="youtube-embed">
+                    <iframe 
+                      src="https://www.youtube.com/embed/zV8PnmXrJCs?start=1" 
+                      title="ResyncBot Demo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
+                  
+                  <h3>What is ResyncBot?</h3>
+                  <p>
+                    ResyncBot is a verified Discord bot that streamlines video editing by automating 
+                    audio replacement with precision synchronization. Trusted by over 80,000 users 
+                    across 130+ communities, it reduces manual editing time from 30+ minutes to 
+                    under 30 seconds. Built for scalability and reliability with Python, Flask, 
+                    PostgreSQL, and Azure, with a React + Vite web demo for creators.
+                  </p>
 
-                <br />
-                <h3>Resyncbot's Story.</h3>
-                <p>
-                  I originally started this project as a fun tool for me and my friends—we were all editors 
-                  and wanted to experiment with different kinds of resyncs. To my surprise, people outside our 
-                  circle began joining our Discord server just to use the bot. That was the moment I realized 
-                  the potential of what I had built.
-                </p>
+                  <h3>ResyncBot's Story</h3>
+                  <p>
+                    I originally started this project as a fun tool for me and my friends—we were all editors 
+                    and wanted to experiment with different kinds of resyncs. To my surprise, people outside our 
+                    circle began joining our Discord server just to use the bot. That was the moment I realized 
+                    the potential of what I had built.
+                  </p>
 
-                <p>
-                  Over the next two months, I dedicated myself to scaling ResyncBot for global use. I implemented 
-                  payment authentication and subscriptions, created a queue handler that processes requests in order, 
-                  and heavily optimized both backend and frontend systems. What started as a small experiment grew 
-                  into my Capstone project, combining backend systems design, distributed job handling, 
-                  frontend integration, and real-world deployment at scale.
-                </p>
-
-                <br />
-
-                <ul>
-                  <li>Automated audio replacement with <strong>BPM detection</strong> and <strong>waveform alignment</strong> for frame-perfect synchronization</li>
-                  <li>Optimized media pipeline using <strong>ffmpeg</strong> and asynchronous job queues, cutting processing time by 90%</li>
-                  <li>Designed a caching and cooldown system with <strong>PostgreSQL</strong> + <strong>Redis-style logic</strong> for 80,000+ active users</li>
-                  <li>Developed an interactive <strong>React + Vite</strong> demo site for real-time audio/video testing</li>
-                  <li>Implemented scalable <strong>Flask API endpoints</strong> with worker pools, ensuring fault tolerance on CPU-limited hosting</li>
-                  <li>Achieved growth to 130+ servers through verified bot status and seamless onboarding experience</li>
-                </ul>
+                  <p>
+                    Over the next two months, I dedicated myself to scaling ResyncBot for global use. I implemented 
+                    payment authentication and subscriptions, created a queue handler that processes requests in order, 
+                    and heavily optimized both backend and frontend systems. What started as a small experiment grew 
+                    into my Capstone project, combining backend systems design, distributed job handling, 
+                    frontend integration, and real-world deployment at scale.
+                  </p>
+                </div>
               </>
             )}
 
             {selectedProject === "NutriDetect" && (
               <>
                 <h2>NutriDetect</h2>
-                <img src={NutriDetectThumb} alt="NutriDetect preview" />
+                <div className="modal-body">
+                  <h3>What is NutriDetect?</h3>
+                  <p>
+                    Built at HackHive 2025 in less than two nights, NutriDetect is an AI-powered health 
+                    assistant that leverages Cohere's API to help users monitor 
+                    their nutrition and live healthier lifestyles. It provides personalized 
+                    suggestions based on daily food logs, tracks nutrient levels, and adapts its 
+                    recommendations for users with unique health considerations or disabilities.
+                  </p>
 
-                <h3>What is NutriDetect?</h3>
-                <p>
-                  Built at HackHive 2025 in less than two nights, NutriDetect is an AI-powered health 
-                  assistant that leverages Cohere’s API to help users monitor 
-                  their nutrition and live healthier lifestyles. It provides personalized 
-                  suggestions based on daily food logs, tracks nutrient levels, and adapts its 
-                  recommendations for users with unique health considerations or disabilities.
-                </p>
-
-                <br />
-
-                <h3>NutriDetect’s Story</h3>
-                <p>
-                  Even though our team didn’t win the hackathon, NutriDetect was the project 
-                  that marked the start of my journey into building full-stack applications. 
-                  I worked on integrating AI with real-time input, setting up a simple but effective 
-                  frontend, and learning how to structure a complete app from scratch.
-                </p>
-                <p>
-                  The skills I developed during this project—AI integration, frontend design, 
-                  and backend APIs—would later form the foundation for my Capstone project, ResyncBot. 
-                  NutriDetect was more than a hackathon experiment; it was the first step toward building 
-                  production-ready AI applications.
-                </p>
+                  <h3>NutriDetect's Story</h3>
+                  <p>
+                    Even though our team didn't win the hackathon, NutriDetect was the project 
+                    that marked the start of my journey into building full-stack applications. 
+                    I worked on integrating AI with real-time input, setting up a simple but effective 
+                    frontend, and learning how to structure a complete app from scratch.
+                  </p>
+                  <p>
+                    The skills I developed during this project—AI integration, frontend design, 
+                    and backend APIs—would later form the foundation for my Capstone project, ResyncBot. 
+                    NutriDetect was more than a hackathon experiment; it was the first step toward building 
+                    production-ready AI applications.
+                  </p>
+                </div>
               </>
             )}
 
+            {selectedProject === "Handwritten Alphabet Recognizer" && (
+              <>
+                <h2>Handwritten Alphabet Recognizer</h2>
+                <div className="modal-body">
+                  <img src={HandwrittenThumb} alt="Handwritten Alphabet Recognizer preview" />
 
-            {/* Repeat for other projects */}
+                  <h3>What is it?</h3>
+                  <p>
+                    A neural network built from scratch in NumPy, later optimized in PyTorch to
+                    achieve 99% accuracy on the MNIST dataset. This project provided hands-on
+                    experience with deep learning concepts including backpropagation, ReLU/Softmax
+                    activations, and weight initialization techniques.
+                  </p>
+
+                  <h3>The Challenge</h3>
+                  <p>
+                    Building a neural network from scratch without relying on high-level frameworks 
+                    taught me the fundamental mathematics behind deep learning. Starting with raw 
+                    NumPy implementations helped me understand gradient descent, loss functions, 
+                    and the intricate details of how neural networks actually learn.
+                  </p>
+                </div>
+              </>
+            )}
+
+            {selectedProject === "Image Filtering Program" && (
+              <>
+                <h2>Image Filtering Program</h2>
+                <div className="modal-body">
+                  <img src={ImageFilteringThumb} alt="Image Filtering Program preview" />
+
+                  <h3>What is it?</h3>
+                  <p>
+                    A C program that implements various image filters with pixel-level precision, 
+                    applying grayscale, blur, edge detection, and Sobel filters on BMP files. 
+                    Built as a flexible CLI tool with user-selectable flags and managed 
+                    compilation using a custom Makefile for modular, maintainable code.
+                  </p>
+
+                  <h3>Technical Implementation</h3>
+                  <p>
+                    This project involved low-level image manipulation, working directly with 
+                    BMP file structures and implementing mathematical filter algorithms. 
+                    The Sobel edge detection filter required understanding convolution matrices 
+                    and gradient calculations, while the blur filter used averaging techniques 
+                    across pixel neighborhoods.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
