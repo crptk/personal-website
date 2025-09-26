@@ -211,7 +211,7 @@ const Projects = () => {
         className="project-card"
         onClick={() => setSelectedProject("Image Filtering Program")}>
           <div className="preview">
-            <img src={ImageFilteringThumb}></img>
+            <img src={ImageFilteringThumb} alt="ImageThumb"></img>
           </div>
 
           <div className="card-header">
