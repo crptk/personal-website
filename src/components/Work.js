@@ -156,6 +156,7 @@ const Work = () => {
           <div className={`work-details ${isVisible ? "active" : ""}`}>
             <h4>Assistant Technician</h4>
             <p><span>Airprime HVAC</span></p>
+            <p>May 2024 - September 2025</p>
             <ul>
               <li>Assisted an HVAC technician on multiple sites, providing support for the installation, repair, and maintenance of air conditioning units for residential and commercial clients.</li>
               <li>Gained hands-on experience with tools, equipment, and industry best practices in a dynamic and fast-paced environment demonstrating quick learning.</li>
