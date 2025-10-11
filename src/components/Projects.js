@@ -81,6 +81,14 @@ const Projects = () => {
                 <span>#azure</span>
                 <span>#discordbot</span>
               </div>
+              <a
+                href="https://github.com/crptk/Resyncbot.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-btn"
+              >
+                <img src={GithubLogo} alt="GitHub" />
+              </a>
             </div>
           </div>
         </div>
